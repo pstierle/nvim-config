@@ -23,4 +23,4 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.updatetime = 250
 
-vim.keymap.set({ "n", "v", "i" }, "<C-z>", "<Cmd>u<CA>", {})
+vim.keymap.set({ "n", "v", "i" }, "<C-z>", "<Cmd>u<CR>", {})
