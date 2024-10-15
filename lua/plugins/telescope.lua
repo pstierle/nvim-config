@@ -7,15 +7,11 @@ return {
             local builtin = require("telescope.builtin")
             local actions = require("telescope.actions")
             local action_state = require("telescope.actions.state")
-
             local function open_in_new_tab(prompt_bufnr)
                 local selection = action_state.get_selected_entry()
                 actions.close(prompt_bufnr)
-
                 local file_path = selection.path
-
                 local file_is_open = false
-
                 for _, tab in ipairs(vim.api.nvim_list_tabpages()) do
                     local buffers = vim.fn.tabpagebuflist(tab)
                     for _, buf in ipairs(buffers) do
@@ -29,13 +25,11 @@ return {
                         break
                     end
                 end
-
                 if not file_is_open then
                     vim.cmd("tabnew " .. file_path)
                     vim.cmd("Neotree filesystem reveal left")
                 end
             end
-
             require("telescope").setup({
                 defaults = {
                     mappings = {
@@ -48,7 +42,6 @@ return {
                     },
                 },
             })
-
             vim.keymap.set("n", "<C-p>", builtin.find_files, {})
             vim.keymap.set("n", "<C-o>", builtin.live_grep, {})
         end,
