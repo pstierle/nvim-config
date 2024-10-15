@@ -4,7 +4,10 @@ return {
 		vim.keymap.set("n", "<C-g>", function()
 			if next(require("diffview.lib").views) == nil then
 				vim.cmd("DiffviewOpen")
-			else
+			end
+		end)
+		vim.keymap.set("n", "<esc>", function()
+			if next(require("diffview.lib").views) ~= nil then
 				vim.cmd("DiffviewClose")
 			end
 		end)

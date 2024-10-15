@@ -12,7 +12,8 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"ts_ls",
-					"gopls"
+					"gopls",
+					"jdtls",
 				},
 			})
 		end,
@@ -24,6 +25,16 @@ return {
 			lspconfig.lua_ls.setup({})
 			lspconfig.ts_ls.setup({})
 			lspconfig.gopls.setup({})
+
+			local jdtls_root = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
+			local lombok_path = jdtls_root .. "/lombok.jar"
+
+			lspconfig.jdtls.setup({
+				cmd = {
+					"jdtls",
+					"--jvm-arg=" .. string.format("-javaagent:%s", vim.fn.expand(lombok_path)),
+				},
+			})
 
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set({ "n", "v" }, "ca", vim.lsp.buf.code_action, {})
