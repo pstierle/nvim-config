@@ -7,6 +7,7 @@ vim.cmd("set nowrap")
 
 vim.opt.number = true
 vim.opt.showmode = false
+vim.opt.cursorline = true
 
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
