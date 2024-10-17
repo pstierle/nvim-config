@@ -4,7 +4,7 @@ return {
 		config = true,
 		cmd = "ToggleTerm",
 		keys = {
-			{ "<C-t>", "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+			{ "<C-t>", "<Cmd>exe v:count1 . 'ToggleTerm'<CR>", desc = "Toggle terminal" },
 		},
 	},
 }
