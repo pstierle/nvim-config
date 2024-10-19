@@ -14,6 +14,7 @@ return {
 					"ts_ls",
 					"gopls",
 					"jdtls",
+					"clangd",
 				},
 			})
 		end,
@@ -25,6 +26,7 @@ return {
 			lspconfig.lua_ls.setup({})
 			lspconfig.ts_ls.setup({})
 			lspconfig.gopls.setup({})
+			lspconfig.clangd.setup({})
 
 			local jdtls_root = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
 			local lombok_path = jdtls_root .. "/lombok.jar"
