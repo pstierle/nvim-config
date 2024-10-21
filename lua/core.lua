@@ -5,6 +5,9 @@ vim.cmd("set textwidth=0")
 vim.cmd("set expandtab")
 vim.cmd("set nowrap")
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 vim.schedule(function()
     vim.opt.clipboard = "unnamedplus"
 end)
