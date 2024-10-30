@@ -43,7 +43,6 @@ return {
             vim.keymap.set("n", "ch", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "ca", vim.lsp.buf.code_action, {})
-            vim.keymap.set("n", "gf", vim.lsp.buf.format, {})
         end,
     },
 }
