@@ -15,6 +15,7 @@ return {
                     "gopls",
                     "jdtls",
                     "clangd",
+                    "svelte"
                 },
             })
         end,
@@ -27,6 +28,7 @@ return {
             lspconfig.ts_ls.setup({})
             lspconfig.gopls.setup({})
             lspconfig.clangd.setup({})
+            lspconfig.svelte.setup({})
 
             local jdtls_root = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
             local lombok_path = jdtls_root .. "/lombok.jar"
