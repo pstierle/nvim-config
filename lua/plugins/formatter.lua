@@ -4,7 +4,8 @@ return {
         require("conform").setup({
             formatters_by_ft = {
                 lua = { "stylua" },
-                svelte = { "deno_fmt", "superhtml" }
+                svelte = { "deno_fmt", "superhtml" },
+                css = { "prettierd" }
             },
             format_on_save = {
                 timeout_ms = 500,
