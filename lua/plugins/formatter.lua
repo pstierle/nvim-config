@@ -7,10 +7,9 @@ return {
                 svelte = { "deno_fmt", "superhtml" },
                 css = { "prettierd" }
             },
-            format_on_save = {
-                timeout_ms = 500,
-                lsp_format = "fallback",
-            },
         })
+        vim.keymap.set("n", "gf", function()
+            require("conform").format({ async = true, lsp_fallback = true })
+        end)
     end
 }
