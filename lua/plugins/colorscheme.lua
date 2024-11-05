@@ -1,14 +1,16 @@
 return {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    'AlexvZyl/nordic.nvim',
+    lazy = false,
     priority = 1000,
     config = function()
-        vim.cmd("colorscheme catppuccin-frappe")
+        require('nordic').load()
+
+        vim.cmd("colorscheme nordic")
 
         require("lualine").setup({
             options = {
-                theme = "catppuccin",
+                theme = "nordic",
             },
         })
-    end,
+    end
 }
